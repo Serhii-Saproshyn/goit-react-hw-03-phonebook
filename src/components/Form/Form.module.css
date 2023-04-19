@@ -1,0 +1,37 @@
+body {
+  background-color: rgb(252, 225, 192);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  gap: 20px;
+  padding: 20px 0;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+input {
+  margin-left: 10px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: rgb(247, 154, 41);
+}
+
+button:hover,
+button:focus {
+  background-color: rgb(255, 128, 0);
+  scale: 1.02;
+}
