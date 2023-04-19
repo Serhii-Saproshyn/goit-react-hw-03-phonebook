@@ -5,11 +5,26 @@ import { Form } from './Form/Form';
 import { Contacts } from './Contacts/Contacts';
 import { Filter } from './Filter/Filter';
 
+const LS_KEY = '';
+
 export class App extends Component {
   state = {
     contacts: ContactsList,
     filter: '',
   };
+
+  componentDidMount() {
+    const savedState = JSON.parse(localStorage.getItem(LS_KEY));
+    if (savedState) {
+      this.setState({ contacts: savedState });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (prevState !== this.state.contacts) {
+      localStorage.setItem(LS_KEY, JSON.stringify(this.state.contacts));
+    }
+  }
 
   onSubmiHandler = (name, number) => {
     const contact = {
